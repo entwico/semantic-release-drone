@@ -41,7 +41,7 @@ or for any git server (including BitBucket cloud which does not support tokens):
 ```yml
     git_login: bot
     git_password:
-      from_secret: token
+      from_secret: password
 ```
 
 ## What it does
