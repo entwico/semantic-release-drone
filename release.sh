@@ -10,6 +10,8 @@ export GL_TOKEN=$PLUGIN_GITLAB_TOKEN
 export BB_TOKEN=$PLUGIN_BITBUCKET_TOKEN
 export GIT_CREDENTIALS=$(node /semantic-release/create-credentials.js)
 
-cp /semantic-release/.releaserc .releaserc
+cp /semantic-release/.releaserc.json .releaserc
 
 semantic-release
+
+rm .releaserc
