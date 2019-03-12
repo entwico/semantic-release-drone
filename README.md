@@ -16,8 +16,9 @@ steps:
 - name: semantic-release
   image: entwico/semantic-release
   settings:
-    user_name: bot # semantic release committer name (git config user.name)
-    user_email: bot@example.com # semantic release committer email (git config user.email)
+    version_file: .tags # the file where the version will be persisted, defaults to .release-version
+    git_user_name: bot # semantic release committer name (git config user.name)
+    git_user_email: bot@example.com # semantic release committer email (git config user.email)
     github_token: # semantic release token (for authentication)
       from_secret: token
 ```
