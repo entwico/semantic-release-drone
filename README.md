@@ -47,10 +47,12 @@ or for any git server (including BitBucket cloud which does not support tokens):
 
 ## What it does
 
+Runs on master branch only. Skips any actions below while on other branches.
+
 - automatically creates a semantic version number
-- (master branch only) attaches the version number as repo's git tag
-- (master branch only) exposes the version number into the file `.release-version`
-- (master branch only) automatically creates, populates and pushes CHANGELOG.md to your master branch
+- attaches the version number as repo's git tag
+- exposes the version number into the file `.release-version`
+- automatically creates, populates and pushes CHANGELOG.md to your master branch
 
 ## License
 
