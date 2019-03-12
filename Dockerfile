@@ -1,9 +1,8 @@
 FROM node:10-alpine
 
-ADD release.sh /usr/bin/release
-ADD .releaserc.json /semantic-release/.releaserc
+ADD release.sh create-credentials.js .releaserc.json /semantic-release/
 
 RUN npm i -g semantic-release @semantic-release/changelog @semantic-release/exec @semantic-release/git \
-    && chmod +x /usr/bin/release
+  && chmod +x /semantic-release/release.sh
 
-CMD ["release"]
+CMD ["/semantic-release/release.sh"]

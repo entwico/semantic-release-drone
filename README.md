@@ -16,8 +16,8 @@ steps:
 - name: semantic-release
   image: entwico/semantic-release
   settings:
-    user_name: john # semantic release committer name (git config user.name)
-    user_email: john@example.com # semantic release committer email (git config user.email)
+    user_name: bot # semantic release committer name (git config user.name)
+    user_email: bot@example.com # semantic release committer email (git config user.email)
     github_token: # semantic release token (for authentication)
       from_secret: token
 ```
@@ -33,6 +33,14 @@ or for GitLab
 
 ```yml
     gitlab_token: # semantic release token (for authentication)
+      from_secret: token
+```
+
+or for any git server (including BitBucket cloud which does not support tokens):
+
+```yml
+    git_login: bot
+    git_password:
       from_secret: token
 ```
 
