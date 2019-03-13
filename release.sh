@@ -14,6 +14,6 @@ cp /semantic-release/.releaserc.json .releaserc
 
 semantic-release
 
-if [ -z "$PLUGIN_VERSION_FILE" ]; then mv .release-version $PLUGIN_VERSION_FILE; fi
+if [ -n "$PLUGIN_VERSION_FILE" ]; then mv .release-version $PLUGIN_VERSION_FILE; fi
 
 rm .releaserc
