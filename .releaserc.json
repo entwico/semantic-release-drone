@@ -7,7 +7,7 @@
     "@semantic-release/changelog",
     {
       "path": "@semantic-release/exec",
-      "cmd": "echo \"${nextRelease.version}\" > .release-version"
+      "cmd": "echo -n \"${nextRelease.version}\" > .release-version"
     },
     {
       "path": "@semantic-release/git",
