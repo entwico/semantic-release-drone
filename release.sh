@@ -15,9 +15,9 @@ export GIT_CREDENTIALS=$(node /semantic-release/create-credentials.js)
 cp /semantic-release/.releaserc.json .releaserc
 
 if [ "$MODE" = "predict" ]; then
-  semantic-release -d | sed -E 's/.*([0-9]+.[0-9]+.[0-9]+)/\1/' > .release-version
+  (semantic-release -d || exit 1) | sed -E 's/.*([0-9]+.[0-9]+.[0-9]+)/\1/' > .release-version
 else
-  semantic-release
+  semantic-release  || exit 1
 fi
 
 rm .releaserc
