@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:12-alpine
 
 ADD release.sh create-credentials.js .releaserc.json /semantic-release/
 

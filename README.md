@@ -16,6 +16,7 @@ steps:
 - name: semantic-release
   image: entwico/semantic-release
   settings:
+    mode: release # "release" means the actual release and "predict" means to generate the version in dry run to use it e.g. before build
     version_file: .tags # the file where the version will be persisted, defaults to .release-version
     git_user_name: bot # semantic release committer name (git config user.name)
     git_user_email: bot@example.com # semantic release committer email (git config user.email)
@@ -53,6 +54,8 @@ Runs on master branch only. Skips any actions below while on other branches.
 - attaches the version number as repo's git tag
 - exposes the version number into the file `.release-version`
 - automatically creates, populates and pushes CHANGELOG.md to your master branch
+
+If `mode: predict` is specified, only the `.release-version` file is generated; no tag is attached. Typical use-case is when you want to embed the version into your file for the cli `--version` command
 
 ## License
 
